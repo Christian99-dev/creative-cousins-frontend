@@ -1,0 +1,19 @@
+{
+  "persons": [
+    {
+      "name": "Kaan",
+      "title": "Founder Creative Cousins",
+      "question": "Fünf Dinge die dich als Founder & Creator auszeichnen?",
+      "answers": ["Sorgfältig", "Organisiert", "Offen", "Teamfähig", "Ehrlich"],
+      "img" : "/assets/kaan.png"
+    },
+    {
+        "name": "Berkant",
+        "title": "Founder Creative Cousins",
+        "question": "Fünf Dinge die dich als Founder & Creator auszeichnen?",
+        "answers": ["Sorgfältig", "Organisiert", "Offen", "Teamfähig", "Ehrlich"],
+        "img" : "/assets/berkant.png"
+    }
+  ],
+  "backButton" : "Back"
+}

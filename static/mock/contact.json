@@ -1,0 +1,16 @@
+{
+  "title": "Haben wir Euer Interesse geweckt?",
+  "subtitle": "Bist du bereit für die Creative Cousins?\nDann Kontaktiere uns jetzt!",
+  "buttons": [
+    {
+      "title": "Jetzt anrufen",
+      "icon": "phone",
+      "text": "+49 (0) 17683334083"
+    },
+    {
+      "title": "Oder, jetzt per E-Mail in Verbindung setzten",
+      "icon": "",
+      "text": "info@creative-cousins.de"
+    }
+  ]
+}
