@@ -1,5 +1,8 @@
+// IndexPage.js
 import React, { useEffect, useState } from "react";
-import { fetchAboutUs, fetchWelcome } from "../api/fetch";
+import { fetchWelcome } from "../api/fetch";
+import { styled } from "styled-components";
+import Layout from "../components/Layout";
 
 const IndexPage = () => {
   const [data, setData] = useState(null);
@@ -12,12 +15,15 @@ const IndexPage = () => {
 
   return (
     data && (
-      <div>
-        {/* <img src={data.backgroundMobile} alt="lule"></img> */}
-        {data.backgroundMobile}
-      </div>
+      <Layout>
+        <IndexPageStyle>
+        </IndexPageStyle>
+      </Layout>
     )
   );
 };
+
+const IndexPageStyle = styled.div`
+`;
 
 export default IndexPage;
