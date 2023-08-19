@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import colors from "./colors";
 import spacing from "./spacing";
 import font from "./font";
+import transition from "./transition";
 
 const GlobalStyle = createGlobalStyle`
     *{
@@ -16,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     ${colors}
     ${spacing}
     ${font}
+    ${transition}
     
 `;
 
