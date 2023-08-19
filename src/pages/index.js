@@ -1,19 +1,23 @@
-// IndexPage.js
-import React from "react";
-import { styled } from "styled-components";
-import Layout from "../components/Layout";
-import Navbar from "../components/Navbar";
+import React, { useEffect, useState } from "react";
+import { fetchAboutUs, fetchWelcome } from "../api/fetch";
 
 const IndexPage = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetchWelcome()
+      .then((res) => res.json())
+      .then((json) => setData(json));
+  }, []);
+
   return (
-    <Layout>
-      <IndexPageStyle>
-        <Navbar/>
-      </IndexPageStyle>
-    </Layout>
+    data && (
+      <div>
+        {/* <img src={data.backgroundMobile} alt="lule"></img> */}
+        {data.backgroundMobile}
+      </div>
+    )
   );
 };
-
-const IndexPageStyle = styled.div``;
 
 export default IndexPage;
