@@ -4,7 +4,7 @@ import { FetchLogo } from "../api/fetch";
 import {
   responsiveCSS,
   responsiveCSSauto,
-} from "../services/Style/responsiveCSS";
+} from "../services/Style/responsive";
 
 const Navbar = () => {
   const { data, loading } = FetchLogo();
@@ -33,6 +33,7 @@ const NavbarStyle = styled.nav`
   color: var(--orange);
   ${responsiveCSSauto("height", 120, 100, 80, 60, 40)}
   gap: var(--space-8);
+
   .left,
   .right {
     display: flex;
