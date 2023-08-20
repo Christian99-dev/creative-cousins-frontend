@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
 import Welcome from "../sections/Welcome";
 import AboutUs from "../sections/AboutUs";
+import Team from "../sections/Team";
 
 const IndexPage = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = () => {
         <Navbar/>
         <Welcome/>
         <AboutUs/>
+        <Team/>
       </IndexPageStyle>
     </Layout>
   );

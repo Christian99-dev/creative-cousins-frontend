@@ -30,14 +30,13 @@ const AboutUsStyle = styled.section`
 
   .img-wrapper {
     ${responsiveCSS("height", 500, 450, 350, 250, 150)}
-    img{
-        height: 100%;
+    img {
+      height: 100%;
     }
   }
 
   p {
     line-height: 1;
-
     ${responsiveCSS("padding", "0 400", "0 350", "0 200", "0 75", "0 50")}
     font-size: var(--fs-4);
   }

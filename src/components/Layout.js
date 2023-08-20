@@ -3,7 +3,7 @@ import GlobalStyle from "../theme/global";
 
 export default function Layout({ children }) {
   return (
-    <main>
+    <main style={{overflowY: "hidden"}}>
       <GlobalStyle  />
       {children}
     </main>
