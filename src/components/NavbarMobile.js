@@ -22,6 +22,7 @@ const NavbarMobile = ({ show }) => {
             </div>
           )}
         </div>
+        <div className="placeholder-bar"/>
 
         <div className={"dropdown " + open}>
           <div className="nav-button">Über uns</div>
@@ -58,7 +59,7 @@ const NavbarMobileStyle = styled.nav`
       justify-content: right;
       align-items: center;
       .icon {
-        ${responsiveCSS("height", 0, 0, 0, 30, 20)}
+        height: 70%;
       }
     }
 
@@ -72,12 +73,16 @@ const NavbarMobileStyle = styled.nav`
     }
   }
 
+  .placeholder-bar{
+    ${responsiveCSS("height", 0, 0, 0, 60, 40)}
+  }
+
   .dropdown {
     z-index: 90;
     position: fixed;
     background-color: var(--grey);
     right: 0;
-    ${responsiveCSS("top", 0, 0, 0, 60 + 16, 40 + 16)} // + padding from navbar
+    ${responsiveCSS("top", 0, 0, 0, 60, 40)}
     text-align: center;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     transition: transform var(--transition-time) ease-in;

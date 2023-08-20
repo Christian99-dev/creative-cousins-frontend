@@ -7,5 +7,6 @@ export default css`
         --grey: #D2D2D2;
         --light-grey: #EFEFEF;
         --grey-orange: #ECE8E8;
+        --grey-transparent: rgb(201, 201, 201, 0.6);
     }
 `;

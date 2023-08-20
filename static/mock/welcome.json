@@ -1,4 +1,7 @@
 {
-    "backgroundDekstop" : "/assets/main-desktop.png",
-    "backgroundMobile" : "/assets/main-mobile.png"
+    "backgroundDesktop" : "/assets/main-desktop.png",
+    "backgroundMobile" : "/assets/main-mobile.png",
+    "instagramLink" : "https://instagram.com",
+    "whatsappLink" : "https://whatsapp.com",
+    "email" : "test@email.de"
 }

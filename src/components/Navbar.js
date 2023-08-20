@@ -1,15 +1,14 @@
 import React from "react";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
-import { useWindowSize } from "@uidotdev/usehooks";
-import { size } from "../theme/breakpoints";
+import useMobile from "../services/Hooks/useMobile";
 
 const Navbar = () => {
-  const { width } = useWindowSize();
+  const mobile = useMobile();
   return (
     <React.Fragment>
-      <NavbarDesktop show={width > size.tablet} />
-      <NavbarMobile show={width <= size.tablet} />
+      <NavbarDesktop show={!mobile} />
+      <NavbarMobile show={mobile} />
     </React.Fragment>
   );
 };
