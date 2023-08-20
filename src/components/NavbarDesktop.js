@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import { FetchLogo } from "../api/fetch";
-import { responsiveCSS, responsiveCSSauto } from "../services/Style/responsive";
+import { responsiveCSS } from "../services/Style/responsive";
 
 const NavbarDesktop = ({ show }) => {
   const { data, loading } = FetchLogo();
@@ -31,7 +31,7 @@ const NavbarDesktopStyle = styled.nav`
   display: flex;
   background-color: var(--grey);
   justify-content: center;
-  ${responsiveCSSauto("height", 120, 100, 80, 60, 40)}
+  ${responsiveCSS("height", 120, 100, 80, 60, 40)}
 
   .left {
     margin-left: var(--space-5);
@@ -62,7 +62,7 @@ const NavbarDesktopStyle = styled.nav`
   }
 
   img {
-    ${responsiveCSS("height", 120, 100, 80, 60, 40)}
+    padding: var(--space-1) 0;
   }
 
   .buffer {
