@@ -100,8 +100,8 @@ const WelcomeStyle = styled.section`
     margin-top: var(--space-1);
     background-color: var(--grey-transparent);
     clip-path: circle(45% at 50% 50%);
-    ${responsiveCSS("height", 700, 500, 400, 350, 250)}
-    padding: var(--space-1);
+    ${responsiveCSS("height", 600, 500, 400, 350, 250)}
+    padding: var(--space-4);
     .logo {
       height: 70%;
     }
@@ -117,7 +117,7 @@ const WelcomeStyle = styled.section`
       flex-direction: column;
       img {
         cursor: pointer;
-        ${responsiveCSS("width", 100, 70, 60, 50, 40)}
+        ${responsiveCSS("width", 75, 70, 60, 50, 40)}
       }
     }
   }
