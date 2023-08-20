@@ -29,7 +29,7 @@ const AboutUsStyle = styled.section`
   gap: var(--space-6);
 
   .img-wrapper {
-    ${responsiveCSS("height", "500", "400", "350", "250", "150")}
+    ${responsiveCSS("height", 500, 450, 350, 250, 150)}
     img{
         height: 100%;
     }
