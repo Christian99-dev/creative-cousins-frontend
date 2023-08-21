@@ -1,9 +1,9 @@
 import React from "react";
 import GlobalStyle from "../theme/global";
 
-export default function Layout({ children }) {
+export default function Layout({ children }) {  
   return (
-    <main style={{overflowY: "hidden"}}>
+    <main style={{overflow: "hidden"}}>
       <GlobalStyle  />
       {children}
     </main>
