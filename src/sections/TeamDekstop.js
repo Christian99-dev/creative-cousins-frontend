@@ -57,7 +57,7 @@ const TeamStyle = styled.section`
   align-items: center;
   gap: var(--space-6);
   ${responsiveCSS("margin-top", 35, 35, 35, 0, 0, "%")}
-  ${responsiveCSS("margin-bottom", 55, 55, 60, 0, 0, "%")}
+  ${responsiveCSS("margin-bottom", 45, 45, 50, 0, 0, "%")}
 
   .bigbar {
     transform: rotate(-45deg);
@@ -65,6 +65,7 @@ const TeamStyle = styled.section`
     ${responsiveCSS("height", 600, 500, 450, 0, 0)}
     background-color: var(--orange);
     width: 200%;
+    z-index: -1;
   }
 `;
 
