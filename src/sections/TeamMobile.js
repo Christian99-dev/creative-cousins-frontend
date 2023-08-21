@@ -27,7 +27,8 @@ const TeamMobile = ({ show }) => {
 const TeamMobileStyle = styled.section`
   position: relative;
   display: flex;
-  height: 100vh;
+  ${responsiveCSS("margin-top", 35, 35, 35, 35, 20, "%")}
+  ${responsiveCSS("margin-bottom", 55, 55, 60, 35, 25, "%")}
   align-items: center;
   .bigbar {
     left: -50%;
