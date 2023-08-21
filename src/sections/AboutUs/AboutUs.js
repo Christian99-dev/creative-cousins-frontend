@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import { FetchAboutUs, FetchLogo } from "../api/fetch";
-import { responsiveCSS } from "../services/Style/responsive";
+import { FetchAboutUs, FetchLogo } from "../../api/fetch";
+import { responsiveCSS } from "../../services/Style/responsive";
 
 const AboutUs = () => {
   const { data: dataAboutUs, loading: loadingAboutUs } = FetchAboutUs();

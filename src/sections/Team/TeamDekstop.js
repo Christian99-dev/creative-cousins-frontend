@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import { FetchTeam } from "../api/fetch";
-import { responsiveCSS, responsiveCSSauto } from "../services/Style/responsive";
-import useMobile from "../services/Hooks/useMobile";
-import infoIcon from "../assets/icons/infobutton.png";
+import { FetchTeam } from "../../api/fetch";
+import { responsiveCSS, responsiveCSSauto } from "../../services/Style/responsive";
+import useMobile from "../../services/Hooks/useMobile";
+import infoIcon from "../../assets/icons/infobutton.png";
 
 const TeamDesktop = ({ show }) => {
   const { data, loading } = FetchTeam();

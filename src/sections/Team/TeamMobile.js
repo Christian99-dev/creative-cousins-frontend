@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import { FetchTeam } from "../api/fetch";
-import { responsiveCSS } from "../services/Style/responsive";
-import infoIcon from "../assets/icons/infobutton.png";
-import Slider from "../components/Slider";
+import { FetchTeam } from "../../api/fetch";
+import { responsiveCSS } from "../../services/Style/responsive";
+import infoIcon from "../../assets/icons/infobutton.png";
+import Slider from "../../components/Slider";
 
 const TeamMobile = ({ show }) => {
   const { data, loading } = FetchTeam();

@@ -1,11 +1,11 @@
 import React from "react";
 import { styled } from "styled-components";
-import { FetchLogo, FetchWelcome } from "../api/fetch";
-import { responsiveCSS } from "../services/Style/responsive";
-import useMobile from "../services/Hooks/useMobile";
-import instagram from "../assets/icons/instagram.png";
-import email from "../assets/icons/email.png";
-import whatsapp from "../assets/icons/whatsapp.png";
+import { FetchLogo, FetchWelcome } from "../../api/fetch";
+import { responsiveCSS } from "../../services/Style/responsive";
+import useMobile from "../../services/Hooks/useMobile";
+import instagram from "../../assets/icons/instagram.png";
+import email from "../../assets/icons/email.png";
+import whatsapp from "../../assets/icons/whatsapp.png";
 
 const Welcome = () => {
   const { data: dataWelcome, loading: loadingWelome } = FetchWelcome();

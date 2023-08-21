@@ -1,5 +1,5 @@
 import React from "react";
-import useMobile from "../services/Hooks/useMobile";
+import useMobile from "../../services/Hooks/useMobile";
 import TeamDesktop from "./TeamDekstop";
 import TeamMobile from "./TeamMobile";
 

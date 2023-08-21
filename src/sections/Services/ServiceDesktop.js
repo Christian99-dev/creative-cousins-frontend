@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import { FetchServices, FetchLogo } from "../api/fetch";
+import { FetchServices, FetchLogo } from "../../api/fetch";
 
 const ServiceDesktop = ({ show }) => {
   const { data, loading } = FetchServices();
