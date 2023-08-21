@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { FetchLogo } from "../api/fetch";
+import { responsiveCSS } from "../services/Style/responsive";
 
 const Switcher = ({ items }) => {
   const [active, setActive] = useState(-1);
@@ -103,18 +104,18 @@ const SwitcherStyle = styled.div`
       display: none;
       flex-direction: column;
       text-align: center;
-      padding: var(--space-8);
-      padding-top: var(--space-5);
+      padding: var(--space-5) var(--space-6);
+      justify-content: center;
 
-      .name{
+
+      .name {
         font-size: var(--fs-3);
         color: var(--orange);
-        padding-bottom: var(--space-3);
+        padding-bottom: var(--space-1);
       }
 
-      .description{
-        ont-size: var(--fs-4);
-        line-height: 1.3;
+      .description {
+        font-size: var(--fs-4);
       }
 
       &.active {
