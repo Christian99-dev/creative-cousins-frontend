@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { FetchLogo } from "../api/fetch";
-import { responsiveCSS } from "../services/Style/responsive";
 
 const Switcher = ({ items }) => {
   const [active, setActive] = useState(-1);
