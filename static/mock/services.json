@@ -1,4 +1,5 @@
 {
+  "backgroundMobile" : "/assets/image1.png",
   "services": [
     { "name": "Social Media Marketing", "description": "Wir bringen deinen Social Media Auftritt auf ein neues Level. Fresh, Kreativ & zeitgemäß . Als Social Media Agentur kümmern wir uns, um die ganzheitliche Social Media Betreuung unserer Kunden. Egal ob Instagram, TikTok, Facebook, Google oder Linkedin! Wir haben die richtigen Social Media Marketing Ansätze für deinen Brand. Du willst das komplette Paket? Du willst All In gehen? Dann bekommst du bei uns Content Creation, Content Management, Account Management, Follower Management & das Branding deiner Marke! " },
     { "name": "Influencer Marketing", "description": "Influencer Marketing eine wichtige Säule von Social Media. Als Social Media Agentur haben wir einen ausgewählten Pool an Influencern und wenn nicht begeben wir uns nach passenden Kandidaten auf die Suche. Wir betreuen Brands rund um das Thema Influencer Marketing und helfen ihnen durch den gezielten Einsatz von Influencer ihre Marke auf das nächste Level zu heben." },
