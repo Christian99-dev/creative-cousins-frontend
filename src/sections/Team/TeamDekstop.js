@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { styled } from "styled-components";
 import { FetchTeam } from "../../api/fetch";
-import { responsiveCSS, responsiveCSSauto } from "../../services/Style/responsive";
+import {
+  responsiveCSS,
+  responsiveCSSauto,
+} from "../../services/Style/responsive";
 import useMobile from "../../services/Hooks/useMobile";
 import infoIcon from "../../assets/icons/infobutton.png";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const TeamDesktop = ({ show }) => {
   const { data, loading } = FetchTeam();
@@ -70,11 +74,25 @@ const TeamStyle = styled.section`
 `;
 
 const TeamCard = ({ data, right, onClick, open }) => {
+
   const { name, title, img } = data;
+  const { width } = useWindowSize();
+  const circleRef = useRef(null);
+
+  const calcTravelDist = (displayWidth, circleRef) => {
+    if(circleRef.current == null) return 0;
+    const displayCenter = displayWidth / 2;
+    const circleXpos = circleRef.current.getBoundingClientRect().x;
+    const circleWidth = circleRef.current.getBoundingClientRect().width;
+    const circleCenter = (circleWidth / 2) + circleXpos;
+    const travelDist = displayCenter - circleCenter;
+    return travelDist;
+  }
 
   return (
     <TeamCardStyle
       className={(right ? "right " : "") + (open ? "open" : "close")}
+      circleMoveValue={calcTravelDist(width, circleRef)}
     >
       <div className={"card-container"} onClick={onClick}>
         <div className="info-icon-container">
@@ -86,7 +104,7 @@ const TeamCard = ({ data, right, onClick, open }) => {
           <p className="title">{title}</p>
         </div>
       </div>
-      <div className="circle" />
+      <div className="circle" ref={circleRef} />
     </TeamCardStyle>
   );
 };
@@ -103,7 +121,7 @@ const TeamCardStyle = styled.div`
     align-items: center;
     z-index: 60;
     opacity: 1;
-    transition: opacity var(--transition-time) ease-in;
+    transition: opacity 0.4s ease-in;
 
     .info-icon {
       display: inline-block;
@@ -151,20 +169,15 @@ const TeamCardStyle = styled.div`
 
   &.close {
     .card-container {
-      transition: opacity var(--transition-time) ease-out;
+      z-index: 30;
+      transition: opacity 0.4s  ease-out;
       opacity: 0;
       z-index: -1;
     }
 
     .circle {
-      transform: translateX(200%);
-      transition: all 0.4s ease-out;
-    }
-  }
-
-  &.close.right {
-    .circle {
-      transform: translateX(-200%);
+      z-index: 20;
+      transform: ${props => "translateX("+props.circleMoveValue + "px)"};
       transition: all 0.4s ease-out;
     }
   }
@@ -197,7 +210,7 @@ const InfoBoxStyle = styled.div`
   background-color: red;
   opacity: 1;
   z-index: 40;
-  background-color: var(--white-transparen-hard);
+  background-color: transparent;
   clip-path: circle(50% at 50% 50%);
   ${responsiveCSS("width", 700, 650, 550, 0, 0)}
   ${responsiveCSS("height", 700, 650, 550, 0, 0)}
