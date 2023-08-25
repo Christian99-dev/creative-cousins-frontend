@@ -7,6 +7,7 @@ import AboutUs from "../sections/AboutUs/AboutUs";
 import Team from "../sections/Team/Team";
 import Services from "../sections/Services/Services";
 import Gallery from "../sections/Gallery/Gallery";
+import Contact from "../sections/Contact/Contact";
 
 const IndexPage = () => {
   return (
@@ -17,6 +18,7 @@ const IndexPage = () => {
       <Team />
       <Services />
       <Gallery />
+      <Contact />
     </Layout>
   );
 };
