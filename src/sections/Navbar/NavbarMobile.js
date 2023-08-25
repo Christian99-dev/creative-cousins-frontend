@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import { responsiveCSS } from "../services/Style/responsive";
-import { FetchLogo } from "../api/fetch";
-import menuIcon from "../assets/icons/menu-outline.svg";
+import { responsiveCSS } from "../../services/Style/responsive";
+import { FetchLogo } from "../../api/fetch";
+import menuIcon from "../../assets/icons/menu-outline.svg";
 
 const NavbarMobile = ({ show }) => {
   const { data, loading } = FetchLogo();

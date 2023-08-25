@@ -1,7 +1,7 @@
 // IndexPage.js
 import React from "react";
-import Layout from "../components/Layout";
-import Navbar from "../components/Navbar";
+import Root from "../components/Root";
+import Navbar from "../sections/Navbar/Navbar";
 import Welcome from "../sections/Welcome/Welcome";
 import AboutUs from "../sections/AboutUs/AboutUs";
 import Team from "../sections/Team/Team";
@@ -11,7 +11,7 @@ import Contact from "../sections/Contact/Contact";
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Root>
       <Navbar />
       <Welcome />
       <AboutUs />
@@ -19,7 +19,7 @@ const IndexPage = () => {
       <Services />
       <Gallery />
       <Contact />
-    </Layout>
+    </Root>
   );
 };
 

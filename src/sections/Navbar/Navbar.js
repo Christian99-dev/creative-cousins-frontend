@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
-import useMobile from "../services/Hooks/useMobile";
+import useMobile from "../../services/Hooks/useMobile";
 
 const Navbar = () => {
   const mobile = useMobile();

@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import { FetchLogo } from "../api/fetch";
-import { responsiveCSS } from "../services/Style/responsive";
+import { FetchLogo } from "../../api/fetch";
+import { responsiveCSS } from "../../services/Style/responsive";
 
 const NavbarDesktop = ({ show }) => {
   const { data, loading } = FetchLogo();
