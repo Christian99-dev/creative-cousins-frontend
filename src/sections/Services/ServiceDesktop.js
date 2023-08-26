@@ -72,7 +72,10 @@ const SwitcherStyle = styled.div`
     width: 33%;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
     button {
+      border: 1px solid rgba(0,0,0,0.5);
+      border-bottom: none;
       width: 100%;
       height: 100%;
       background-color: white;
