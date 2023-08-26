@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "styled-components";
 import { FetchLogo, FetchWelcome } from "../../api/fetch";
 import { responsiveCSS } from "../../services/Style/responsive";
@@ -6,11 +6,14 @@ import useMobile from "../../services/Hooks/useMobile";
 import instagram from "../../assets/icons/instagram.png";
 import email from "../../assets/icons/email.png";
 import whatsapp from "../../assets/icons/whatsapp.png";
+import { usePosition } from "../../services/Hooks/usePosition";
 
 const Welcome = () => {
   const { data: dataWelcome, loading: loadingWelome } = FetchWelcome();
   const { data: dataLogo, loading: loadingLogo } = FetchLogo();
   const mobile = useMobile();
+  const {scrollY} = usePosition();
+
 
   return (
     <WelcomeStyle>
@@ -31,7 +34,7 @@ const Welcome = () => {
       )}
 
       <div>
-        <div className="cricle">
+        <div className={"cricle " + (scrollY > 50 ? "disappear" : "")}>
           {!loadingLogo && (
             <img className="logo" alt="Firmenlogo" src={dataLogo.logo}></img>
           )}
@@ -62,9 +65,9 @@ export default Welcome;
 const WelcomeStyle = styled.section`
   ${responsiveCSS(
     "height",
-    "calc(100vh - 120px)",
     "calc(100vh - 100px)",
     "calc(100vh - 80px)",
+    "calc(100vh - 70px)",
     "calc(100vh - 60px)",
     "calc(100vh - 40px)",
     ""
@@ -102,12 +105,22 @@ const WelcomeStyle = styled.section`
     clip-path: circle(45% at 50% 50%);
     ${responsiveCSS("height", 600, 500, 400, 350, 250)}
     padding: var(--space-4);
+    transition: all 0.3s ease-in;
+
     .logo {
       height: 70%;
+    }
+
+    &.disappear{
+      opacity: 0;
+      transition: all 0.3s ease-out;
     }
   }
 
   .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     padding: var(--space-1);
     display: flex;
     justify-content: right;
@@ -117,7 +130,7 @@ const WelcomeStyle = styled.section`
       flex-direction: column;
       img {
         cursor: pointer;
-        ${responsiveCSS("width", 75, 70, 60, 50, 40)}
+        ${responsiveCSS("width", 70, 65, 60, 50, 40)}
       }
     }
   }
