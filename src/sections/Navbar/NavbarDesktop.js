@@ -53,7 +53,7 @@ const NavbarDesktopStyle = styled.nav`
     display: flex;
     background-color: var(--grey);
     justify-content: center;
-    ${responsiveCSS("height", 120, 100, 80, 60, 40)}
+    ${responsiveCSS("height", 100, 80, 70, 0, 0)}
 
     .logo {
       cursor: pointer;
@@ -102,6 +102,6 @@ const NavbarDesktopStyle = styled.nav`
   }
 
   .bar-placeholder {
-    ${responsiveCSS("height", 120, 100, 80, 60, 40)}
+    ${responsiveCSS("height", 100, 80, 70, 60, 40)}
   }
 `;

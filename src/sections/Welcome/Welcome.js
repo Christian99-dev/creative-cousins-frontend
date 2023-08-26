@@ -80,9 +80,9 @@ const WelcomeStyle = styled.section`
     width: 100%;
     ${responsiveCSS(
       "height",
-      "calc(100vh - 120px)",
       "calc(100vh - 100px)",
       "calc(100vh - 80px)",
+      "calc(100vh - 70px)",
       "calc(100vh - 60px)",
       "calc(100vh - 40px)",
       ""
