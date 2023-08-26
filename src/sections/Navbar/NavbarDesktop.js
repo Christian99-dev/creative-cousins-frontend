@@ -118,6 +118,7 @@ const NavbarDesktopStyle = styled.nav`
         color: var(--orange);
         cursor: pointer;
         white-space: nowrap;
+        font-weight: 600;
         &:hover,
         &.active {
           color: var(--pink);

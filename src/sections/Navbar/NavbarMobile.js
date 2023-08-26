@@ -154,6 +154,7 @@ const NavbarMobileStyle = styled.nav`
       border-bottom: white 1px solid;
       font-size: var(--fs-3);
       transition: color var(--transition-time) ease-in;
+      font-weight: 600;
 
       &.active {
         color: var(--pink);
