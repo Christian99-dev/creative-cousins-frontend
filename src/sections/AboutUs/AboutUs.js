@@ -7,7 +7,7 @@ const AboutUs = () => {
   const { data: dataAboutUs, loading: loadingAboutUs } = FetchAboutUs();
   const { data: dataLogo, loading: loadingLogo } = FetchLogo();
   return (
-    <AboutUsStyle>
+    <AboutUsStyle id="aboutUs">
       {!loadingLogo && (
         <div className="img-wrapper">
           <img alt="Firmenlogo" src={dataLogo.logo} />

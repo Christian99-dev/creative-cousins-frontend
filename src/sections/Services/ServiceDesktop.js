@@ -6,7 +6,7 @@ const ServiceDesktop = ({ show }) => {
   const { data, loading } = FetchServices();
   return (
     show && (
-      <section>
+      <section id="services">
         {!loading && <Switcher items={data.services}></Switcher>}
       </section>
     )

@@ -10,7 +10,7 @@ const Contact = () => {
   const { data, loading } = FetchContact();
   return (
     !loading && (
-      <ContactStyle>
+      <ContactStyle id="contact">
         <h1 className="title">{data.title}</h1>
         <h2 className="subtitle">{Parser(data.subtitle)}</h2>
 

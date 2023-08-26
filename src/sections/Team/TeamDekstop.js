@@ -17,7 +17,7 @@ const TeamDesktop = ({ show }) => {
 
   return (
     show && (
-      <TeamStyle>
+      <TeamStyle id="portfolio">
         {!loading && (
           <TeamCard
             data={data.persons[0]}
@@ -62,8 +62,9 @@ const TeamStyle = styled.section`
   justify-content: center;
   align-items: center;
   gap: var(--space-6);
-  ${responsiveCSS("margin-top", 35, 35, 35, 0, 0, "%")}
-  ${responsiveCSS("margin-bottom", 45, 45, 50, 0, 0, "%")}
+  ${responsiveCSS("margin-top", 25, 25, 25, 0, 0, "%")}
+  ${responsiveCSS("padding-top", 10, 10, 10, 0, 0, "%")}
+  ${responsiveCSS("padding-bottom", 45, 45, 50, 0, 0, "%")}
 
   .bigbar {
     transform: rotate(-45deg);

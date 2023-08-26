@@ -9,7 +9,7 @@ const TeamMobile = ({ show }) => {
   const { data, loading } = FetchTeam();
   return (
     show && (
-      <TeamMobileStyle>
+      <TeamMobileStyle id="portfolio">
         {!loading && (
           <Slider
             items={[

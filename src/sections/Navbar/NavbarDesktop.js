@@ -3,6 +3,8 @@ import { styled } from "styled-components";
 import { FetchLogo } from "../../api/fetch";
 import { responsiveCSS } from "../../services/Style/responsive";
 import { Link } from "gatsby";
+import { Link as Scroller } from "react-scroll";
+import { navButtonSetting } from "../../services/Utils/navbuttonSettings";
 
 const NavbarDesktop = ({ show, navigation }) => {
   const { data, loading } = FetchLogo();
@@ -12,8 +14,24 @@ const NavbarDesktop = ({ show, navigation }) => {
         <div className="bar">
           {navigation && (
             <div className="left">
-              <div className="nav-button">Über uns</div>
-              <div className="nav-button">Portfolio</div>
+              <Scroller
+                className="nav-button"
+                activeClass="active"
+                to="aboutUs"
+                spy={true}
+                {...navButtonSetting}
+              >
+                Über uns
+              </Scroller>
+              <Scroller
+                className="nav-button"
+                activeClass="active"
+                to="portfolio"
+                spy={true}
+                {...navButtonSetting}
+              >
+                Portfolio
+              </Scroller>
             </div>
           )}
           <div className="buffer" />
@@ -28,8 +46,24 @@ const NavbarDesktop = ({ show, navigation }) => {
           <div className="buffer" />
           {navigation && (
             <div className="right">
-              <div className="nav-button">Leistungen</div>
-              <div className="nav-button">Kontakt</div>
+              <Scroller
+                className="nav-button"
+                activeClass="active"
+                {...navButtonSetting}
+                to="services"
+                spy={true}
+              >
+                Leistungen
+              </Scroller>
+              <Scroller
+                className="nav-button"
+                activeClass="active"
+                {...navButtonSetting}
+                to="contact"
+                spy={true}
+              >
+                Kontakt
+              </Scroller>
             </div>
           )}
         </div>
@@ -84,7 +118,8 @@ const NavbarDesktopStyle = styled.nav`
         color: var(--orange);
         cursor: pointer;
         white-space: nowrap;
-        &:hover {
+        &:hover,
+        &.active {
           color: var(--pink);
           text-decoration: underline;
           transition: color var(--transition-time) ease-in;

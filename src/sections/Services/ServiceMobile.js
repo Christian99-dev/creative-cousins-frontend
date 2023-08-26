@@ -8,7 +8,7 @@ const ServiceMobile = ({ show }) => {
 
   return (
     show && (
-      <ServiceMobileStyle>
+      <ServiceMobileStyle id="services">
         {!loading && <Accordion items={data.services} />}
         {!loading && (
           <img

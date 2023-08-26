@@ -4,6 +4,8 @@ import { responsiveCSS } from "../../services/Style/responsive";
 import { FetchLogo } from "../../api/fetch";
 import menuIcon from "../../assets/icons/menu-outline.svg";
 import { Link } from "gatsby";
+import { Link as Scroller } from "react-scroll";
+import { navButtonSettingMobile } from "../../services/Utils/navbuttonSettings";
 
 const NavbarMobile = ({ show, navigation }) => {
   const { data, loading } = FetchLogo();
@@ -41,10 +43,46 @@ const NavbarMobile = ({ show, navigation }) => {
         <div className="placeholder-bar" />
 
         <div className={"dropdown " + open}>
-          <div className="nav-button">Über uns</div>
-          <div className="nav-button">Portfolio</div>
-          <div className="nav-button">Leistungen</div>
-          <div className="nav-button">Kontakt</div>
+          <Scroller
+            className="nav-button"
+            activeClass="active"
+            to="aboutUs"
+            spy={true}
+            {...navButtonSettingMobile}
+            onClick={() => setOpen(!open)}
+          >
+            Über uns
+          </Scroller>
+          <Scroller
+            className="nav-button"
+            activeClass="active"
+            to="portfolio"
+            spy={true}
+            {...navButtonSettingMobile}
+            onClick={() => setOpen(!open)}
+          >
+            Portfolio
+          </Scroller>
+          <Scroller
+            className="nav-button"
+            activeClass="active"
+            to="services"
+            spy={true}
+            {...navButtonSettingMobile}
+            onClick={() => setOpen(!open)}
+          >
+            Leistungen
+          </Scroller>
+          <Scroller
+            className="nav-button"
+            activeClass="active"
+            to="contact"
+            spy={true}
+            {...navButtonSettingMobile}
+            onClick={() => setOpen(!open)}
+          >
+            Kontakt
+          </Scroller>
         </div>
       </NavbarMobileStyle>
     )
@@ -71,7 +109,7 @@ const NavbarMobileStyle = styled.nav`
     .logo-wrapper {
       height: 100%;
     }
-    
+
     .icon-container {
       display: flex;
       height: 100%;
@@ -97,6 +135,9 @@ const NavbarMobileStyle = styled.nav`
   }
 
   .dropdown {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
     z-index: 90;
     position: fixed;
     background-color: var(--grey);
@@ -111,6 +152,14 @@ const NavbarMobileStyle = styled.nav`
       margin: var(--space-3);
       padding: var(--space-1);
       border-bottom: white 1px solid;
+      font-size: var(--fs-3);
+      transition: color var(--transition-time) ease-in;
+
+      &.active {
+        color: var(--pink);
+        text-decoration: underline;
+        transition: color var(--transition-time) ease-in;
+      }
     }
 
     &.false {
