@@ -8,6 +8,7 @@ import Team from "../sections/Team/Team";
 import Services from "../sections/Services/Services";
 import Gallery from "../sections/Gallery/Gallery";
 import Contact from "../sections/Contact/Contact";
+import Footer from "../sections/Footer/Footer";
 
 const IndexPage = () => {
   return (
@@ -19,6 +20,7 @@ const IndexPage = () => {
       <Services />
       <Gallery />
       <Contact />
+      <Footer />
     </Root>
   );
 };
