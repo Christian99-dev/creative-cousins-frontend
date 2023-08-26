@@ -18,18 +18,23 @@ const NavbarMobile = ({ show }) => {
           )}
           {!loading && (
             <div className="icon-container">
-              <img className="icon" alt="Menu icon" src={menuIcon} onClick={() => setOpen(!open)} />
+              <img
+                className="icon"
+                alt="Menu icon"
+                role="presentation"
+                src={menuIcon}
+                onClick={() => setOpen(!open)}
+              />
             </div>
           )}
         </div>
-        <div className="placeholder-bar"/>
+        <div className="placeholder-bar" />
 
         <div className={"dropdown " + open}>
           <div className="nav-button">Über uns</div>
           <div className="nav-button">Portfolio</div>
           <div className="nav-button">Leistungen</div>
           <div className="nav-button">Kontakt</div>
-          <div className="nav-button">Impressum</div>
         </div>
       </NavbarMobileStyle>
     )
@@ -73,7 +78,7 @@ const NavbarMobileStyle = styled.nav`
     }
   }
 
-  .placeholder-bar{
+  .placeholder-bar {
     ${responsiveCSS("height", 0, 0, 0, 60, 40)}
   }
 
@@ -86,7 +91,7 @@ const NavbarMobileStyle = styled.nav`
     text-align: center;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     transition: transform var(--transition-time) ease-in;
-    
+
     .nav-button {
       color: var(--orange);
       margin: var(--space-3);
@@ -94,7 +99,7 @@ const NavbarMobileStyle = styled.nav`
       border-bottom: white 1px solid;
     }
 
-    &.false{
+    &.false {
       transition: transform var(--transition-time) ease-out;
       transform: translateY(-100%);
     }

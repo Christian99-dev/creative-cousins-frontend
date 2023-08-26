@@ -9,8 +9,9 @@ const Gallery = () => {
   return (
     <GalleryStyle>
       {!loading &&
-        data.gallery.map((imgUrl) => (
+        data.gallery.map((imgUrl, index) => (
           <img
+            key={index}
             className="box"
             src={imgUrl}
             alt="Service der vom Unternehmen angeboten wird"

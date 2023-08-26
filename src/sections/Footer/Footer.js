@@ -12,8 +12,8 @@ const Footer = () => {
 
   return (
     <FooterStyle>
-      <a className="link">Impressum</a>
-      <a className="link">Datenschutz</a>
+      <a className="link" href="https://google.com">Impressum</a>
+      <a className="link" href="https://google.com">Datenschutz</a>
       {!loadingFooter && (
         <a className="link" href={dataFooter.instagramLink}>
           Instagram

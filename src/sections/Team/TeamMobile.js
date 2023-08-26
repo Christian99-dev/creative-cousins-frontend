@@ -13,8 +13,8 @@ const TeamMobile = ({ show }) => {
         {!loading && (
           <Slider
             items={[
-              <TeamCard data={data.persons[0]} buttonText={data.backButton} />,
-              <TeamCard data={data.persons[1]} buttonText={data.backButton} />,
+              <TeamCard data={data.persons[0]} buttonText={data.backButton} tabIndex={0} />,
+              <TeamCard data={data.persons[1]} buttonText={data.backButton} tabIndex={-1} />,
             ]}
           />
         )}
@@ -40,16 +40,23 @@ const TeamMobileStyle = styled.section`
   }
 `;
 
-const TeamCard = ({ data, buttonText }) => {
+const TeamCard = ({ data, buttonText, tabIndex }) => {
   const { name, title, question, answers, img } = data;
   const [open, setOpen] = useState(false);
 
   return (
     <TeamCardStyle>
       <div
+        tabIndex={tabIndex}
         className={"button " + (open ? "open" : "closed")}
+        role="button"
         onClick={() => {
           if (!open) setOpen(true);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            if (!open) setOpen(true);
+          }
         }}
       >
         {!open ? (
@@ -70,8 +77,10 @@ const TeamCard = ({ data, buttonText }) => {
               <p className="title">{title}</p>
               <p className="question">{question}</p>
               <div className="answers">
-                {answers.map((answer) => (
-                  <p className="answer">{answer}</p>
+                {answers.map((answer, index) => (
+                  <p className="answer" key={index}>
+                    {answer}
+                  </p>
                 ))}
               </div>
             </div>

@@ -64,6 +64,7 @@ const Accordion = ({ items }) => {
                 if (active === index) setActive(-1);
                 else setActive(index);
               }}
+              role="presentation"
             >
               {item.name}
             </p>

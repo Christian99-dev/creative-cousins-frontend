@@ -15,9 +15,9 @@ const Contact = () => {
         <h2 className="subtitle">{Parser(data.subtitle)}</h2>
 
         <div className="buttons">
-          {data.buttons.map((button) => {
+          {data.buttons.map((button, index) => {
             return (
-              <div className="button-section">
+              <div className="button-section" key={index}>
                 <p className="button-section-title">{button.title}</p>
                 <Button text={button.text} icon={button.icon} />
               </div>
@@ -65,10 +65,10 @@ const Button = ({ icon, text }) => {
   const icons = new Map([["phone", telIcon]]);
   const iconUrl = icon !== "" ? icons.get(icon) : "";
   return (
-    <a style={{textDecoration: "none"}} href={createLink(text)}>
-      <ButtonStyle  icon={icon}>
+    <a style={{ textDecoration: "none" }} href={createLink(text)}>
+      <ButtonStyle>
         {iconUrl !== "" && (
-          <object alt="icon" data={iconUrl} type="image/svg+xml" />
+          <object aria-label="icon" data={iconUrl} type="image/svg+xml" />
         )}
         {text}
       </ButtonStyle>

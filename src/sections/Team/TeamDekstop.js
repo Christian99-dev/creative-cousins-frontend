@@ -23,6 +23,7 @@ const TeamDesktop = ({ show }) => {
             data={data.persons[0]}
             open={open}
             right={false}
+            tabIndex={0}
             onClick={() => {
               setOpen(false);
               setInfoId(0);
@@ -34,6 +35,7 @@ const TeamDesktop = ({ show }) => {
             data={data.persons[1]}
             open={open}
             right={true}
+            tabIndex={0}
             onClick={() => {
               setOpen(false);
               setInfoId(1);
@@ -73,28 +75,37 @@ const TeamStyle = styled.section`
   }
 `;
 
-const TeamCard = ({ data, right, onClick, open }) => {
-
+const TeamCard = ({ data, right, onClick, open, tabIndex }) => {
   const { name, title, img } = data;
   const { width } = useWindowSize();
   const circleRef = useRef(null);
 
   const calcTravelDist = (displayWidth, circleRef) => {
-    if(circleRef.current == null) return 0;
+    if (circleRef.current == null) return 0;
     const displayCenter = displayWidth / 2;
     const circleXpos = circleRef.current.getBoundingClientRect().x;
     const circleWidth = circleRef.current.getBoundingClientRect().width;
-    const circleCenter = (circleWidth / 2) + circleXpos;
+    const circleCenter = circleWidth / 2 + circleXpos;
     const travelDist = displayCenter - circleCenter;
     return travelDist;
-  }
+  };
 
   return (
     <TeamCardStyle
       className={(right ? "right " : "") + (open ? "open" : "close")}
-      circleMoveValue={calcTravelDist(width, circleRef)}
+      circlemovevalue={calcTravelDist(width, circleRef)}
     >
-      <div className={"card-container"} onClick={onClick}>
+      <div
+        role="button"
+        tabIndex={tabIndex}
+        className={"card-container"}
+        onClick={onClick}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            onClick();
+          }
+        }}
+      >
         <div className="info-icon-container">
           <img className="info-icon" alt="Infoicon" src={infoIcon} />
         </div>
@@ -170,14 +181,14 @@ const TeamCardStyle = styled.div`
   &.close {
     .card-container {
       z-index: 30;
-      transition: opacity 0.4s  ease-out;
+      transition: opacity 0.4s ease-out;
       opacity: 0;
       z-index: -1;
     }
 
     .circle {
       z-index: 20;
-      transform: ${props => "translateX("+props.circleMoveValue + "px)"};
+      transform: ${(props) => "translateX(" + props.circlemovevalue + "px)"};
       transition: all 0.4s ease-out;
     }
   }
@@ -192,8 +203,10 @@ const InfoBox = ({ open, data, onButtonClick, buttonText }) => {
         <p className="title">{title}</p>
         <p className="question">{question}</p>
         <div className="answers">
-          {answers.map((answer) => (
-            <p className="answer">{answer}</p>
+          {answers.map((answer, index) => (
+            <p className="answer" key={index}>
+              {answer}
+            </p>
           ))}
         </div>
       </div>

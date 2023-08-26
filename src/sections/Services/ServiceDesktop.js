@@ -23,6 +23,7 @@ const Switcher = ({ items }) => {
         {items.map((item, index) => {
           return (
             <button
+              key={index}
               className={active === index ? "active" : ""}
               onClick={() => setActive(index)}
             >
@@ -36,6 +37,7 @@ const Switcher = ({ items }) => {
           ? items.map((item, index) => {
               return (
                 <div
+                  key={index}
                   className={
                     "text-container" + (active === index ? " active" : "")
                   }
