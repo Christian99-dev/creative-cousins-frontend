@@ -3,12 +3,12 @@ import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import useMobile from "../../services/Hooks/useMobile";
 
-const Navbar = () => {
+const Navbar = ({navigation}) => {
   const mobile = useMobile();
   return (
     <React.Fragment>
-      <NavbarDesktop show={!mobile} />
-      <NavbarMobile show={mobile} />
+      <NavbarDesktop show={!mobile} navigation={navigation}/>
+      <NavbarMobile show={mobile} navigation={navigation}/>
     </React.Fragment>
   );
 };

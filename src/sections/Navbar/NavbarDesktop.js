@@ -2,24 +2,36 @@ import React from "react";
 import { styled } from "styled-components";
 import { FetchLogo } from "../../api/fetch";
 import { responsiveCSS } from "../../services/Style/responsive";
+import { Link } from "gatsby";
 
-const NavbarDesktop = ({ show }) => {
+const NavbarDesktop = ({ show, navigation }) => {
   const { data, loading } = FetchLogo();
   return (
     show && (
       <NavbarDesktopStyle>
         <div className="bar">
-          <div className="left">
-            <div className="nav-button">Über uns</div>
-            <div className="nav-button">Portfolio</div>
-          </div>
+          {navigation && (
+            <div className="left">
+              <div className="nav-button">Über uns</div>
+              <div className="nav-button">Portfolio</div>
+            </div>
+          )}
           <div className="buffer" />
-          {!loading && <img alt="Firmenlogo" src={data.logo} />}
+          {!loading && !navigation && (
+            <Link className="logo-wrapper" to="/">
+              <img className="logo" alt="Firmenlogo" src={data.logo} />
+            </Link>
+          )}
+          {!loading && navigation && (
+            <img alt="Firmenlogo" className="logo" src={data.logo} />
+          )}
           <div className="buffer" />
-          <div className="right">
-            <div className="nav-button">Leistungen</div>
-            <div className="nav-button">Kontakt</div>
-          </div>
+          {navigation && (
+            <div className="right">
+              <div className="nav-button">Leistungen</div>
+              <div className="nav-button">Kontakt</div>
+            </div>
+          )}
         </div>
 
         <div className="bar-placeholder" />
@@ -42,6 +54,15 @@ const NavbarDesktopStyle = styled.nav`
     background-color: var(--grey);
     justify-content: center;
     ${responsiveCSS("height", 120, 100, 80, 60, 40)}
+
+    .logo {
+      cursor: pointer;
+    }
+    .logo-wrapper {
+      .logo {
+        height: 100%;
+      }
+    }
 
     .left {
       margin-left: var(--space-5);
@@ -80,7 +101,7 @@ const NavbarDesktopStyle = styled.nav`
     }
   }
 
-  .bar-placeholder{
+  .bar-placeholder {
     ${responsiveCSS("height", 120, 100, 80, 60, 40)}
   }
 `;

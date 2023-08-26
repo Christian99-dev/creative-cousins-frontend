@@ -14,7 +14,7 @@ const IndexPage = () => {
   return (
     <Root>
       <header>
-        <Navbar />
+        <Navbar navigation />
       </header>
       <main>
         <Welcome />

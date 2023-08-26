@@ -3,8 +3,9 @@ import { styled } from "styled-components";
 import { responsiveCSS } from "../../services/Style/responsive";
 import { FetchLogo } from "../../api/fetch";
 import menuIcon from "../../assets/icons/menu-outline.svg";
+import { Link } from "gatsby";
 
-const NavbarMobile = ({ show }) => {
+const NavbarMobile = ({ show, navigation }) => {
   const { data, loading } = FetchLogo();
   const [open, setOpen] = useState(false);
 
@@ -13,18 +14,27 @@ const NavbarMobile = ({ show }) => {
       <NavbarMobileStyle>
         <div className="bar">
           <div className="buffer" />
-          {!loading && (
+          {!loading && navigation && (
             <img className="logo" alt="Firmenlogo" src={data.logo} />
           )}
+
+          {!loading && !navigation && (
+            <Link to="/" className="logo-wrapper">
+              <img className="logo" alt="Firmenlogo" src={data.logo} />
+            </Link>
+          )}
+
           {!loading && (
             <div className="icon-container">
-              <img
-                className="icon"
-                alt="Menu icon"
-                role="presentation"
-                src={menuIcon}
-                onClick={() => setOpen(!open)}
-              />
+              {navigation && (
+                <img
+                  className="icon"
+                  alt="Menu icon"
+                  role="presentation"
+                  src={menuIcon}
+                  onClick={() => setOpen(!open)}
+                />
+              )}
             </div>
           )}
         </div>
@@ -58,6 +68,10 @@ const NavbarMobileStyle = styled.nav`
     align-items: center;
     padding: var(--space-2);
 
+    .logo-wrapper {
+      height: 100%;
+    }
+    
     .icon-container {
       display: flex;
       height: 100%;
