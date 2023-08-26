@@ -4,7 +4,6 @@ import { staticData } from "./endpoints";
 // chose implementation
 const endpoints = staticData;
 
-// fetch
 export const FetchLogo = () => {
     return useFetch(endpoints.logo);
 }
@@ -36,4 +35,9 @@ export const FetchContact = () => {
 export const FetchFooter = () => {
   return useFetch(endpoints.footer);
 };
+
+export const FetchPolicy = () => {
+  return useFetch(endpoints.policy);
+};
+
 

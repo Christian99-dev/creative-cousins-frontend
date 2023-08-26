@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         border: none;
-        font-size: 100%;
         font-family: "corbel";
         line-height: 1;
         box-sizing: border-box;
