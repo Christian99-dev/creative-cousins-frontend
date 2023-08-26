@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { FetchFooter, FetchLogo } from "../../api/fetch";
 import { responsiveCSS } from "../../services/Style/responsive";
 import { device } from "../../theme/breakpoints";
+import { Link } from "gatsby";
 
 const Footer = ({ innerRef }) => {
   const { data: dataFooter, loading: loadingFooter } = FetchFooter();
@@ -10,12 +11,12 @@ const Footer = ({ innerRef }) => {
 
   return (
     <FooterStyle ref={innerRef}>
-      <a className="link" href="https://google.com">
+      <Link className="link" to="/impressum">
         Impressum
-      </a>
-      <a className="link" href="https://google.com">
+      </Link>
+      <Link className="link" to="/datenschutz">
         Datenschutz
-      </a>
+      </Link>
       {!loadingFooter && (
         <a className="link" href={dataFooter.instagramLink}>
           Instagram
@@ -52,9 +53,16 @@ const FooterStyle = styled.footer`
   }
 
   .link {
+    cursor: pointer;
     text-decoration: none;
     font-size: var(--fs-4);
     color: black;
+    transition: all 0.2s ease-in;
+    
+    &:hover{
+      color: var(--pink);
+      transition: all 0.2s ease-in;
+    }
   }
 
   @media ${device.tablet} {
