@@ -17,7 +17,13 @@ const NavbarMobile = ({ show, navigation }) => {
         <div className="bar">
           <div className="buffer" />
           {!loading && navigation && (
-            <img className="logo" alt="Firmenlogo" src={data.logo} />
+            <Scroller
+              className="scroller-logo"
+              to="welcome"
+              {...navButtonSettingMobile}
+            >
+              <img className="logo" alt="Firmenlogo" src={data.logo} />
+            </Scroller>
           )}
 
           {!loading && !navigation && (
@@ -119,7 +125,9 @@ const NavbarMobileStyle = styled.nav`
         height: 70%;
       }
     }
-
+    .scroller-logo {
+      height: 100%;
+    }
     .logo {
       height: 100%;
     }

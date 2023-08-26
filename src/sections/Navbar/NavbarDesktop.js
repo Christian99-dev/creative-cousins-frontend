@@ -41,7 +41,9 @@ const NavbarDesktop = ({ show, navigation }) => {
             </Link>
           )}
           {!loading && navigation && (
-            <img alt="Firmenlogo" className="logo" src={data.logo} />
+            <Scroller to="welcome" {...navButtonSetting}>
+              <img alt="Firmenlogo" className="logo" src={data.logo} />
+            </Scroller>
           )}
           <div className="buffer" />
           {navigation && (
@@ -91,11 +93,7 @@ const NavbarDesktopStyle = styled.nav`
 
     .logo {
       cursor: pointer;
-    }
-    .logo-wrapper {
-      .logo {
-        height: 100%;
-      }
+      height: 100%;
     }
 
     .left {

@@ -16,7 +16,7 @@ const Welcome = () => {
 
 
   return (
-    <WelcomeStyle>
+    <WelcomeStyle id="welcome">
       {!loadingWelome && !mobile && (
         <img
           className="background"
