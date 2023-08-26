@@ -146,7 +146,6 @@ const TeamCardStyle = styled.div`
 
     .text-container {
       color: var(--orange);
-      font-weight: 600;
       font-size: var(--fs-4);
     }
 

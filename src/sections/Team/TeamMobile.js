@@ -168,6 +168,7 @@ const TeamCardStyle = styled.div`
       }
 
       .answer {
+        font-weight: 500;
         font-size: var(--fs-4);
         color: black;
         padding-bottom: var(--space-1);
