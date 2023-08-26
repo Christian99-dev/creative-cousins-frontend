@@ -1,9 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import { FetchFooter, FetchLogo } from "../../api/fetch";
-import {
-  responsiveCSS,
-} from "../../services/Style/responsive";
+import { responsiveCSS } from "../../services/Style/responsive";
 import { device } from "../../theme/breakpoints";
 
 const Footer = () => {
@@ -12,8 +10,12 @@ const Footer = () => {
 
   return (
     <FooterStyle>
-      <a className="link" href="https://google.com">Impressum</a>
-      <a className="link" href="https://google.com">Datenschutz</a>
+      <a className="link" href="https://google.com">
+        Impressum
+      </a>
+      <a className="link" href="https://google.com">
+        Datenschutz
+      </a>
       {!loadingFooter && (
         <a className="link" href={dataFooter.instagramLink}>
           Instagram
@@ -28,28 +30,30 @@ const Footer = () => {
 export default Footer;
 
 const FooterStyle = styled.footer`
+  ${responsiveCSS("height", "250px", "180px", "170px", "auto", "auto", "")}
+
   ${responsiveCSS(
     "padding",
-    "100px 200px",
-    "75px 150px",
-    "50px 50px",
-    "35px 35px",
-    "30px 30px",
+    "40px 200px",
+    "30px 180px",
+    "25px 130px",
+    "25px 130px",
+    "25px 130px",
     ""
   )}
-  /* padding: var(--space-4) var(--space-8); */
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--grey-orange);
 
   img {
-    ${responsiveCSS("height", 250, 235, 150, 125, 100)}
+    ${responsiveCSS("height", "100%", "100%", "100%", "100px", "80px", "")}
   }
 
   .link {
     text-decoration: none;
-    font-size: var(--fs-3);
+    font-size: var(--fs-4);
     color: black;
   }
 
