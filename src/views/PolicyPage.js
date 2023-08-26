@@ -12,7 +12,6 @@ const PolicyPage = ({ type }) => {
   const footerRef = useRef();
 
   const calculateLeftSpace = (headerRef, footerRef) => {
-    console.log(headerRef, footerRef);
     if (!headerRef.current || !footerRef.current) return 0;
     return (
       headerRef.current.getBoundingClientRect().height +
@@ -36,16 +35,16 @@ const PolicyPageStyle = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  h1{
+  h1 {
     padding: var(--space-3) 0;
   }
 
-  h2{
-    padding:var(--space-2) 0;
+  h2 {
+    padding: var(--space-2) 0;
   }
 
-  h3{
-    padding:var(--space-1) 0;
+  h3 {
+    padding: var(--space-1) 0;
   }
 
   main {
