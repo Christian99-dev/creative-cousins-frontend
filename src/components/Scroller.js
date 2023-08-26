@@ -2,14 +2,17 @@ import React from "react";
 import { styled } from "styled-components";
 import { FetchLogo } from "../api/fetch";
 import Parser from "html-react-parser";
+import useMobile from "../services/Hooks/useMobile";
+import { device } from "../theme/breakpoints";
 
 const Scroller = ({ text }) => {
   const { data, loading } = FetchLogo();
+  const mobile = useMobile();
   return (
     <ScrollerStyle>
       <div className="textsection">{Parser(text)}</div>
       <div className="logosection">
-        {!loading && <img src={data.logo} alt="Unternehmenslogo" />}
+        {!loading && !mobile && <img src={data.logo} alt="Unternehmenslogo" />}
       </div>
     </ScrollerStyle>
   );
@@ -33,6 +36,16 @@ const ScrollerStyle = styled.div`
     width: 40%;
     img {
       width: 100%;
+    }
+  }
+
+  @media ${device.tablet} {
+    text-align: center;
+    .textsection{
+      width: 100%;
+    }
+    .logosection{
+      display: none;
     }
   }
 `;

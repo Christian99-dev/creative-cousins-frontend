@@ -4,12 +4,12 @@ import { FetchFooter, FetchLogo } from "../../api/fetch";
 import { responsiveCSS } from "../../services/Style/responsive";
 import { device } from "../../theme/breakpoints";
 
-const Footer = () => {
+const Footer = ({ innerRef }) => {
   const { data: dataFooter, loading: loadingFooter } = FetchFooter();
   const { data: dataLogo, loading: loadingLogo } = FetchLogo();
 
   return (
-    <FooterStyle>
+    <FooterStyle ref={innerRef}>
       <a className="link" href="https://google.com">
         Impressum
       </a>
