@@ -9,6 +9,7 @@ import Services from "../sections/Services/Services";
 import Gallery from "../sections/Gallery/Gallery";
 import Contact from "../sections/Contact/Contact";
 import Footer from "../sections/Footer/Footer";
+import { SEO } from "../components/SEO";
 
 const IndexPage = () => {
   return (
@@ -30,3 +31,5 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const Head = () => <SEO title="Homepage" />
