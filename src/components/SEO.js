@@ -1,6 +1,6 @@
 import React from "react";
 import { useSiteMetadata } from "../services/Hooks/useSiteMetadata";
-import { FetchLogo, endpoints } from "../api/fetch";
+import { endpoints } from "../api/fetch";
 
 export const SEO = ({ title: pageTitle, description, pathname, children }) => {
   const {
