@@ -10,6 +10,7 @@ import Gallery from "../sections/Gallery/Gallery";
 import Contact from "../sections/Contact/Contact";
 import Footer from "../sections/Footer/Footer";
 import { SEO } from "../components/SEO";
+import { sites } from "../../static/constants/metadata";
 
 const IndexPage = () => {
   return (
@@ -34,7 +35,7 @@ export default IndexPage;
 
 export const Head = () => (
   <SEO
-    title="Homepage"
-    description="Willkommen bei CreativeCousins! Wir sind Ihre Experten für  Social Media, umfassendes Branding, professionelle Social Media Betreuung (zb Instagram), Influencer Marketing und kreative Content-Erstellung. Entdecken Sie, wie wir Ihre Vision zum Leben erwecken können."
+    title={sites.homepage.title}
+    description={sites.homepage.description}
   />
 );
