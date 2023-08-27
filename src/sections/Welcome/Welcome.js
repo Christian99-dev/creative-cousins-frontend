@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { styled } from "styled-components";
 import { FetchLogo, FetchWelcome } from "../../api/fetch";
 import { responsiveCSS } from "../../services/Style/responsive";
 import useMobile from "../../services/Hooks/useMobile";
 import instagram from "../../assets/icons/instagram.png";
 import email from "../../assets/icons/email.png";
-import whatsapp from "../../assets/icons/whatsapp.png";
 import { usePosition } from "../../services/Hooks/usePosition";
 
 const Welcome = () => {
@@ -45,9 +44,6 @@ const Welcome = () => {
           <div className="icons">
             <a href={dataWelcome.instagramLink}>
               <img src={instagram} alt="Instagram Logo" />
-            </a>
-            <a href={dataWelcome.whatsappLink}>
-              <img src={whatsapp} alt="Whatsapp Logo" />
             </a>
             <a href={"mailto:" + dataWelcome.instagramLink}>
               <img src={email} alt="Email Logo" />
