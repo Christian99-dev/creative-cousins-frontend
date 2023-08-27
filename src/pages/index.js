@@ -32,4 +32,9 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <SEO title="Homepage" />
+export const Head = () => (
+  <SEO
+    title="Homepage"
+    description="Willkommen bei CreativeCousins! Wir sind Ihre Experten für  Social Media, umfassendes Branding, professionelle Social Media Betreuung (zb Instagram), Influencer Marketing und kreative Content-Erstellung. Entdecken Sie, wie wir Ihre Vision zum Leben erwecken können."
+  />
+);

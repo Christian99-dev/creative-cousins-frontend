@@ -1,6 +1,6 @@
 import React from "react";
 import { useSiteMetadata } from "../services/Hooks/useSiteMetadata";
-import { endpoints } from "../api/fetch";
+import { favicon } from "../../static/constants/metadata";
 
 export const SEO = ({ title: pageTitle, description, pathname, children }) => {
   const {
@@ -8,7 +8,6 @@ export const SEO = ({ title: pageTitle, description, pathname, children }) => {
     description: defaultDescription,
     siteUrl,
   } = useSiteMetadata();
-  const faviconEndpoint = endpoints.favicon;
 
   const seo = {
     title: pageTitle + " | " + websiteTitle,
@@ -20,7 +19,8 @@ export const SEO = ({ title: pageTitle, description, pathname, children }) => {
     <>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
-      <link rel="icon" href={faviconEndpoint} />
+      <link rel="icon" href={favicon} />
+      {children}
     </>
   );
 };

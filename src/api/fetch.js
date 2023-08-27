@@ -2,7 +2,7 @@ import { useFetch } from "../services/Hooks/useFetch";
 import { staticData } from "./endpoints";
 
 // chose implementation
-export const endpoints = staticData;
+const endpoints = staticData;
 
 export const FetchLogo = () => {
     return useFetch(endpoints.logo);
