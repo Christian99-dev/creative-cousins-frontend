@@ -12,8 +12,7 @@ const Welcome = () => {
   const { data: dataWelcome, loading: loadingWelome } = FetchWelcome();
   const { data: dataLogo, loading: loadingLogo } = FetchLogo();
   const mobile = useMobile();
-  const {scrollY} = usePosition();
-
+  const { scrollY } = usePosition();
 
   return (
     <WelcomeStyle id="welcome">
@@ -111,14 +110,15 @@ const WelcomeStyle = styled.section`
       height: 70%;
     }
 
-    &.disappear{
+    &.disappear {
       opacity: 0;
       transition: all 0.3s ease-out;
     }
   }
 
   .bottom-bar {
-    position: absolute;
+    position: fixed;
+    z-index: 100;
     bottom: 0;
     right: 0;
     padding: var(--space-1);
@@ -130,7 +130,7 @@ const WelcomeStyle = styled.section`
       flex-direction: column;
       img {
         cursor: pointer;
-        ${responsiveCSS("width", 70, 65, 60, 50, 40)}
+        ${responsiveCSS("width", 65, 60, 50, 45, 40)}
       }
     }
   }
