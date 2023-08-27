@@ -1,6 +1,6 @@
 import React from "react";
 import PolicyPage from "../views/PolicyPage";
-import { SEO } from "../components/SEO";
+import { Seo } from "../components/Seo";
 import { sites } from "../../static/constants/metadata";
 
 const impressum = () => {
@@ -10,7 +10,7 @@ const impressum = () => {
 export default impressum;
 
 export const Head = () => (
-  <SEO
+  <Seo
     title={sites.impressum.title}
     description={sites.impressum.description}
   />

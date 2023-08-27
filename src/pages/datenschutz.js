@@ -1,6 +1,6 @@
 import React from "react";
 import PolicyPage from "../views/PolicyPage";
-import { SEO } from "../components/SEO";
+import { Seo } from "../components/Seo";
 import { sites } from "../../static/constants/metadata";
 
 const datenschutz = () => {
@@ -10,7 +10,7 @@ const datenschutz = () => {
 export default datenschutz;
 
 export const Head = () => (
-  <SEO
+  <Seo
     title={sites.dateschutz.title}
     description={sites.dateschutz.description}
   />

@@ -2,7 +2,7 @@ import React from "react";
 import { useSiteMetadata } from "../services/Hooks/useSiteMetadata";
 import { favicon } from "../../static/constants/metadata";
 
-export const SEO = ({ title: pageTitle, description, pathname, children }) => {
+export const Seo = ({ title: pageTitle, description, pathname, children }) => {
   const {
     title: websiteTitle,
     description: defaultDescription,

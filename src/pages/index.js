@@ -9,7 +9,7 @@ import Services from "../sections/Services/Services";
 import Gallery from "../sections/Gallery/Gallery";
 import Contact from "../sections/Contact/Contact";
 import Footer from "../sections/Footer/Footer";
-import { SEO } from "../components/SEO";
+import { Seo } from "../components/Seo";
 import { sites } from "../../static/constants/metadata";
 
 const IndexPage = () => {
@@ -34,7 +34,7 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => (
-  <SEO
+  <Seo
     title={sites.homepage.title}
     description={sites.homepage.description}
   />
