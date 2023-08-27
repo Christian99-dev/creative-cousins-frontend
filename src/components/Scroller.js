@@ -23,10 +23,20 @@ const ScrollerStyle = styled.div`
   height: 100%;
   padding: var(--space-4);
 
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--grey);
+    border-radius: 10px;
+  }
+
   .textsection {
     width: 60%;
     height: 100%;
-    overflow: scroll;
+    overflow-x: scroll;
   }
 
   .logosection {
@@ -41,10 +51,10 @@ const ScrollerStyle = styled.div`
 
   @media ${device.tablet} {
     text-align: center;
-    .textsection{
+    .textsection {
       width: 100%;
     }
-    .logosection{
+    .logosection {
       display: none;
     }
   }
