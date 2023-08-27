@@ -7,5 +7,6 @@ export const staticData = {
   gallery: "/mock/gallery.json",
   contact: "/mock/contact.json",
   footer: "/mock/footer.json",
-  policy:"/mock/policy.json"
+  policy:"/mock/policy.json",
+  favicon:"/mock/favicon.png"
 };

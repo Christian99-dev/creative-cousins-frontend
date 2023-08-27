@@ -1,6 +1,6 @@
 import React from "react";
 import { useSiteMetadata } from "../services/Hooks/useSiteMetadata";
-import { FetchLogo } from "../api/fetch";
+import { FetchLogo, endpoints } from "../api/fetch";
 
 export const SEO = ({ title: pageTitle, description, pathname, children }) => {
   const {
@@ -8,7 +8,7 @@ export const SEO = ({ title: pageTitle, description, pathname, children }) => {
     description: defaultDescription,
     siteUrl,
   } = useSiteMetadata();
-  const { data, loading } = FetchLogo();
+  const faviconEndpoint = endpoints.favicon;
 
   const seo = {
     title: pageTitle + " | " + websiteTitle,
@@ -20,18 +20,7 @@ export const SEO = ({ title: pageTitle, description, pathname, children }) => {
     <>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
-      {loading ? (
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
-        />
-      ) : (
-        <link
-          rel="icon"
-          href={data.logo}
-        />
-      )}
-      {children}
+      <link rel="icon" href={faviconEndpoint} />
     </>
   );
 };
