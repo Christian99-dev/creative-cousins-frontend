@@ -24,7 +24,7 @@ const PolicyPage = ({ type }) => {
         <header ref={headerRef}>
           <Navbar />
         </header>
-        <main>{!loading && <Scroller text={data[type]} />}</main>
+        <main>{!loading && <Scroller text={data[type] + (type="impressum" && data["icons"])} />}</main>
         <Footer innerRef={footerRef} />
       </PolicyPageStyle>
     </Root>
