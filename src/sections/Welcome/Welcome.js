@@ -45,7 +45,7 @@ const Welcome = () => {
             <a href={dataWelcome.instagramLink}>
               <img src={instagram} alt="Instagram Logo" />
             </a>
-            <a href={"mailto:" + dataWelcome.instagramLink}>
+            <a href={"mailto:" + dataWelcome.email}>
               <img src={email} alt="Email Logo" />
             </a>
           </div>
