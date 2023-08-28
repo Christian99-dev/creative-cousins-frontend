@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `CreativeCousins`,
     description: `Wir sind CreativeCousins`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.creative-cousins.com`,
   },
   plugins: ["gatsby-plugin-styled-components"],
 };
